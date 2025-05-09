@@ -8,15 +8,14 @@ import cors from "cors";
 const app = express();
 
 
-
 const firebaseConfig = {
-    apiKey: process.env.FIRESBASE_API_KEY,
-    authDomain: "car-rental-project-334a8.firebaseapp.com",
-    projectId: "car-rental-project-334a8",
-    storageBucket: "car-rental-project-334a8.appspot.com",
-    messagingSenderId: "326694983808",
-    appId: "1:326694983808:web:4c6a5d27533a2ccae8ae65",
-    measurementId: "G-NSJXDXDDE7"
+    apiKey: process.env.FIREBASE_API_KEY,
+    authDomain: process.env.FIREBASE_AUTH_DOMAIN,
+    projectId: process.env.FIREBASE_PROJECT_ID,
+    storageBucket: process.env.FIREBASE_STORAGE_BUCKET,
+    messagingSenderId: process.env.FIREBASE_MESSAGING_SENDER_ID,
+    appId: process.env.FIREBASE_APP_ID,
+    measurementId: process.env.FIREBASE_MEASUREMENT_ID
 };
 
 // Import the Firebase SDK
@@ -31,7 +30,7 @@ const storage = getStorage(firebaseApp);
 
 // function retrive image
 export default async function getImageURL(imageName) {
-    const storageRef = ref(storage, `https://firebasestorage.googleapis.com/v0/b/car-rental-project-334a8.appspot.com/o/${imageName}`);      // get this path from firebase console
+    const storageRef = ref(storage, `https://firebasestorage.googleapis.com/v0/b/${process.env.FIREBASE_STORAGE_BUCKET}/o/${imageName}`);      // get this path from firebase console
     try {
         const downloadURL = await getDownloadURL(storageRef);
         return downloadURL;
