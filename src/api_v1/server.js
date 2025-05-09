@@ -10,7 +10,7 @@ const app = express();
 
 
 const firebaseConfig = {
-    apiKey: "AIzaSyDpzvM3lh5PrSuxecJReAcAiuAQpiJCC9k",
+    apiKey: process.env.FIRESBASE_API_KEY,
     authDomain: "car-rental-project-334a8.firebaseapp.com",
     projectId: "car-rental-project-334a8",
     storageBucket: "car-rental-project-334a8.appspot.com",
