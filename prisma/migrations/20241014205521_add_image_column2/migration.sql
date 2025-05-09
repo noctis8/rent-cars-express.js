@@ -1,0 +1,2 @@
+-- AlterTable
+ALTER TABLE `car` MODIFY `img_url` VARCHAR(191) NOT NULL DEFAULT '';
