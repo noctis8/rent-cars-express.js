@@ -12,6 +12,7 @@ This is a simple backend application built with **Express.js** for managing a ca
 
 - Node.js
 - Express.js
+- Prisma  
 
 ## Getting Started
 
